@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRIS</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="iris-logo">IRIS</div>
+        <div class="mode-change"><span class="material-icons light_mode">light_mode</span></div>
+    </div>
+    <div class="container1">
+        <div class="box1">
+            <form action="/upload-file" class="stupid-form" method="POST" enctype="multipart/form-data">
+                <div class="file-upload" id="fileUpload">
+                    <input type="file" id="fileInput" name="file" accept=".pdf, .jpg, .jpeg, .png">
+                    <input type="button" value="Select File" onclick="document.getElementById('fileInput').click();" />
+                    <input type="submit" value="Upload" onclick="return validateFile()">
+                </div>
+            </form>
+            <textarea id="input-text" placeholder="paste the terms and conditions here..."
+                onclick="hideFileUpload()"></textarea>
+        </div>
+
+        <div class="box2">
+            <div class="response"></div>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="dashed-line"></div>
+        <div class="arrow">
+            <span class="material-icons keyboard-arrow-down">keyboard_arrow_down</span>
+        </div>
+        <div class="why-iris">
+            <h1 class="anim-heading">Why IRIS?</h1>
+            <p class="page-text">At IRIS, we understand that terms and conditions can be lengthy, complex, and often
+                difficult to understand. We believe that everyone should have the right to know exactly what they
+                are agreeing to when using a software application or website, without sacrificing their privacy and
+                security. That's why we created IRIS, a web-based application powered by advanced AI technology, to
+                provide users with a clear and easy-to-understand summary of the key sections of terms and
+                conditions agreements. Our solution allows users to make informed decisions about the policies they
+                are agreeing to, increasing transparency and awareness around data privacy and security. At IRIS, we
+                are dedicated to creating a safer and more secure online environment for everyone.</p>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-text">
+            <p>
+                <span class="footer-item"><a href="{{ url_for('contactus') }}">Contact Us</a></span>
+                <span class="material-icons icon-circle">circle</span>
+                <span class="footer-item"><a href="{{ url_for('privacypolicy') }}">Privacy Policy</a></span>
+                <span class="material-icons icon-circle">circle</span>
+                <span class="footer-item"><a href="{{ url_for('termsofservice') }}">Terms of Service</a></span>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

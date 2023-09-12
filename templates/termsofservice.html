@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service</title>
+    <link href='https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+
+    <style>
+        body {
+            /*background-color: aquamarine;*/
+            font-family: "JetBrains Mono", monospace;
+            margin: 0;
+            overflow-y: scroll;
+            /* Enable vertical scrolling */
+            scrollbar-width: none;
+            /* Hide scrollbar for Firefox */
+            -ms-overflow-style: none;
+            /* Hide scrollbar for IE and Edge */
+        }
+
+        body::-webkit-scrollbar {
+            width: 0;
+            /* Hide scrollbar for Chrome, Safari, and Opera */
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 5.4vh;
+            border-bottom: 4px solid black;
+
+            background-color: white;
+            z-index: 1;
+        }
+
+        .iris-logo {
+
+            margin-top: 0.3vh;
+            margin-left: 2.2vh;
+            font-size: 25px;
+            font-weight: bold;
+
+            pointer-events: none;
+        }
+
+        .mode-change {
+            margin-top: 0.7vh;
+            margin-right: 2.7vh;
+            /*background-color: coral;*/
+            right: 10px;
+        }
+
+        .material-icons.light_mode {
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .line {
+            position: absolute;
+            top: 5%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background-color: black;
+        }
+
+
+        .terms {
+            margin-top: 7vh;
+            text-align: center;
+            padding-top: 50px;
+            color: #c67993;
+            animation-name: gradientAnim;
+            font-size: 50px;
+            font-weight: bold;
+            padding-bottom: 40px;
+            font-family: 'JetBrains Mono';
+        }
+
+        .anim-heading {
+            background: linear-gradient(270deg, #c67993, #ac8aac);
+            background-size: 350%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientAnim 3s ease infinite;
+        }
+
+        @keyframes gradientAnim {
+            0% {
+                background-position: 0 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0 50%;
+            }
+        }
+
+        .glines {
+            margin: 0 280px;
+            align-items:center;
+            text-align: center;
+            padding-top: 40px;
+            color: #7f7f7f;
+            font-family: 'JetBrains Mono';
+            font-size: 22px;
+
+        }
+
+        .foot {
+            border-top: 4px solid black;
+            width: 76%;
+            margin: auto;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            height: 12vh;
+            border-top: 4px solid black;
+            margin: 0 16.3vh;
+        }
+
+        .dlines {
+            color: black;
+            font-weight: bold;
+        }
+
+        .dark-mode .dlines {
+            color: white;
+
+        }
+
+        .material-icons.icon-circle {
+            color: #7f7f7f;
+            font-size: 8px;
+            padding: 8px;
+            /*background-color: aqua;*/
+        }
+
+        .footer-text {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-item {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+
+        .dark-mode body {
+            background-color: black;
+        }
+
+        .dark-mode .iris-logo {
+            color: white;
+        }
+
+        .dark-mode .top-bar {
+            background-color: black;
+            border-bottom: 4px solid white;
+        }
+
+        .dark-mode .footer {
+            border-top: 4px solid white;
+        }
+
+        /*footer links*/
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:focus,
+        a:active {
+            outline: none;
+        }
+    </style>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            //dark-mode testing
+            const lightModeIcon = document.querySelector('.material-icons.light_mode');
+            const body = document.body;
+
+            const isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+            if (isDarkMode) {
+                body.classList.add('dark-mode');
+                lightModeIcon.innerHTML = 'dark_mode';
+            }
+
+            lightModeIcon.addEventListener('click', function () {
+
+                console.log('Button Clicked!!');  //testing
+
+                body.classList.toggle('dark-mode');
+
+                localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+
+                if (body.classList.contains('dark-mode')) {
+                    lightModeIcon.innerHTML = 'dark_mode';
+                } else {
+                    lightModeIcon.innerHTML = 'light_mode';
+                }
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="iris-logo">IRIS</div>
+        <div class="mode-change"><span class="material-icons light_mode">light_mode</span></div>
+    </div>
+
+    <div class="line"></div>
+    <div class="terms">Terms of Service</div>
+    <div>
+        <div class="glines">
+            Welcome to IRIS, a web-based application that helps users analyze the
+            terms and
+            conditions of
+            <br> software applications and websites. By using our service, you agree to the following terms and
+            <br> conditions ("Terms of Service"):
+            <br>
+            <br>
+            <span class=dlines>1.Use of Service</span>
+            <br>
+            <br>
+            IRIS is a free service that allows users to input the terms and
+            conditions of a
+            software
+            <br>
+            application or website. Our service analyzes the policy and identifies any concerning sections. <br>
+            The analysis results are presented to the user in a clear and easy-to-understand summary, which
+            <br> helps them make informed decisions about whether to accept the terms and conditions.
+            <br>
+            <br>
+            <span class=dlines>2.User Content</span>
+            <br>
+            <br>
+            IRIS does not collect or store any user information other than the
+            terms and
+            conditions
+
+            the user
+            <br> pastes into the application. We do not use the content that the user provides for any purpose
+            <br> other than analyzing it for the user. The user is responsible for ensuring that the terms and
+            <br> conditions they input into the application are accurate and up-to-date.
+            <br>
+            <br>
+            <span class=dlines>3.Intellectual Property</span>
+            <br>
+            <br>
+            All content and materials on the IRIS website, including but not
+            limited to text,
+            graphics,
+            <br>logos, images, and software, are the property of IRIS and are protected by intellectual property
+            <br>laws. Users may not reproduce, distribute, or modify any content or materials on the IRIS website
+            without
+            prior
+            written consent from IRIS.
+            <br>
+            <br> <span class=dlines>4. Disclaimer of Warranties</span>
+            <br>
+            <br>
+            <br>IRIS does not warrant that our service will be uninterrupted or
+            error-free. We
+            make no
+            <br>representations
+            or warranties of any kind, express or implied, as to the operation of our service
+            <br>or the information, content, materials, or products included on the IRIS website.
+            <br>
+            <br>
+            <span class=dlines>5.Limitation of Liability</span>
+            <br>
+            <br>
+            In no event shall IRIS be liable for any direct, indirect, incidental,
+            special, or
+            consequential <br>
+            damages arising out of or in connection with the use of our service or the IRIS website.
+            <br>
+            <br>
+            <span class=dlines>6.Changes to Terms of Service</span>
+            <br>
+            <br>
+            IRIS reserves the right to modify or update these Terms of Service at
+            any time
+            without
+            prior notice.
+            <br> Your continued use of our service after any changes to the Terms of Service constitutes
+            <br> your acceptance of the new terms.
+            <br>
+            <br>
+            <span class=dlines>7.Governing Law</span>
+            <br>
+            <br>
+            These Terms of Service shall be governed by and construed in accordance
+            with the
+            laws
+            of
+            India.
+            <br> Any legal action or proceeding arising out of or in connection with these Terms of Service shall
+            <br>be brought in the courts of India.
+
+            <br>
+            <br>By using our service, you agree to these Terms of Service. If you do
+            not agree to
+            these
+            Terms of
+            <br>Service, please do not use our service.
+            <br>
+            <br>
+            <br>
+        </div>
+        <div class="footer">
+            <div class="footer-text">
+                <p>
+                    <span class="footer-item"><a href="{{ url_for('contactus') }}">Contact Us</a></span>
+                    <span class="material-icons icon-circle">circle</span>
+                    <span class="footer-item"><a href="{{ url_for('privacypolicy') }}">Privacy Policy</a></span>
+                    <span class="material-icons icon-circle">circle</span>
+                    <span class="footer-item"><a href="{{ url_for('termsofservice') }}">Terms of Service</a></span>
+                </p>
+            </div>
+        </div>
+
+</body>
+
+</html>
